@@ -1,0 +1,16 @@
+current directory: /home/sousaigor@MyKAEFER.com/vitrine-system/vendor/bundle/ruby/3.1.0/gems/stringio-3.1.7/ext/stringio
+/usr/share/rvm/rubies/ruby-3.1.4/bin/ruby -I /usr/share/rvm/rubies/ruby-3.1.4/lib/ruby/3.1.0 extconf.rb
+checking for rb_io_mode_t in ruby/io.h... no
+creating Makefile
+
+current directory: /home/sousaigor@MyKAEFER.com/vitrine-system/vendor/bundle/ruby/3.1.0/gems/stringio-3.1.7/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20250708-380420-dtmjhq sitelibdir\=./.gem.20250708-380420-dtmjhq clean
+
+current directory: /home/sousaigor@MyKAEFER.com/vitrine-system/vendor/bundle/ruby/3.1.0/gems/stringio-3.1.7/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20250708-380420-dtmjhq sitelibdir\=./.gem.20250708-380420-dtmjhq
+compiling stringio.c
+linking shared-object stringio.so
+
+current directory: /home/sousaigor@MyKAEFER.com/vitrine-system/vendor/bundle/ruby/3.1.0/gems/stringio-3.1.7/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20250708-380420-dtmjhq sitelibdir\=./.gem.20250708-380420-dtmjhq install
+/usr/bin/install -c -m 0755 stringio.so ./.gem.20250708-380420-dtmjhq

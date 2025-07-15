@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <title><%= content_for(:title) || "Admin - Vitrine Leide" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_pack_tag 'application', 'data-turbo-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </head>
+
+  <body>
+    <!-- Top Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <%= link_to "Admin - Vitrine Leide", admin_root_path, class: "navbar-brand" %>
+        
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <%= link_to "Ver Site", root_path, class: "nav-link", target: "_blank" %>
+          </li>
+          <li class="nav-item">
+            <span class="navbar-text">Olá, <%= current_user.email %></span>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Sair', destroy_user_session_path, method: :delete, data: { confirm: 'Tem certeza que deseja sair?' } %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-md-3 col-lg-2 d-md-block admin-sidebar collapse">
+          <div class="position-sticky pt-3">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <%= link_to admin_root_path, class: "nav-link #{'active' if controller_name == 'dashboard'}" do %>
+                  <i class="fas fa-tachometer-alt me-2"></i>
+                  Dashboard
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to admin_products_path, class: "nav-link #{'active' if controller_name == 'products'}" do %>
+                  <i class="fas fa-box me-2"></i>
+                  Produtos
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to admin_categories_path, class: "nav-link #{'active' if controller_name == 'categories'}" do %>
+                  <i class="fas fa-tags me-2"></i>
+                  Categorias
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <!-- Flash Messages -->
+          <% if notice %>
+            <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+              <%= notice %>
+              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+          <% end %>
+          
+          <% if alert %>
+            <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+              <%= alert %>
+              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+          <% end %>
+
+          <div class="py-4">
+            <%= yield %>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </body>
+</html>

@@ -1,0 +1,15 @@
+current directory: /home/sousaigor@MyKAEFER.com/vitrine-system/vendor/bundle/ruby/3.1.0/gems/cgi-0.5.0/ext/cgi/escape
+/usr/share/rvm/rubies/ruby-3.1.4/bin/ruby -I /usr/share/rvm/rubies/ruby-3.1.4/lib/ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: /home/sousaigor@MyKAEFER.com/vitrine-system/vendor/bundle/ruby/3.1.0/gems/cgi-0.5.0/ext/cgi/escape
+make DESTDIR\= sitearchdir\=./.gem.20250708-380420-srqx8n sitelibdir\=./.gem.20250708-380420-srqx8n clean
+
+current directory: /home/sousaigor@MyKAEFER.com/vitrine-system/vendor/bundle/ruby/3.1.0/gems/cgi-0.5.0/ext/cgi/escape
+make DESTDIR\= sitearchdir\=./.gem.20250708-380420-srqx8n sitelibdir\=./.gem.20250708-380420-srqx8n
+compiling escape.c
+linking shared-object cgi/escape.so
+
+current directory: /home/sousaigor@MyKAEFER.com/vitrine-system/vendor/bundle/ruby/3.1.0/gems/cgi-0.5.0/ext/cgi/escape
+make DESTDIR\= sitearchdir\=./.gem.20250708-380420-srqx8n sitelibdir\=./.gem.20250708-380420-srqx8n install
+/usr/bin/install -c -m 0755 escape.so ./.gem.20250708-380420-srqx8n/cgi

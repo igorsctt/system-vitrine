@@ -1,0 +1,16 @@
+current directory: /home/sousaigor@MyKAEFER.com/vitrine-system/vendor/bundle/ruby/3.1.0/gems/debug-1.11.0/ext/debug
+/usr/share/rvm/rubies/ruby-3.1.4/bin/ruby -I /usr/share/rvm/rubies/ruby-3.1.4/lib/ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: /home/sousaigor@MyKAEFER.com/vitrine-system/vendor/bundle/ruby/3.1.0/gems/debug-1.11.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250709-27240-4mkynf sitelibdir\=./.gem.20250709-27240-4mkynf clean
+
+current directory: /home/sousaigor@MyKAEFER.com/vitrine-system/vendor/bundle/ruby/3.1.0/gems/debug-1.11.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250709-27240-4mkynf sitelibdir\=./.gem.20250709-27240-4mkynf
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/sousaigor@MyKAEFER.com/vitrine-system/vendor/bundle/ruby/3.1.0/gems/debug-1.11.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250709-27240-4mkynf sitelibdir\=./.gem.20250709-27240-4mkynf install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20250709-27240-4mkynf/debug

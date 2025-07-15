@@ -1,0 +1,30 @@
+
+<div style="max-width: 600px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,0.08); padding: 32px;">
+  <h2 style="text-align:center; color:#4B2E83; margin-bottom:24px;">Detalhes do Produto</h2>
+  <div style="margin-bottom:18px;">
+    <strong style="color:#4B2E83;">Nome:</strong>
+    <span style="color:#333; font-weight:500;"> <%= @product.name %> </span>
+  </div>
+  <div style="margin-bottom:18px;">
+    <strong style="color:#4B2E83;">Descrição:</strong>
+    <span style="color:#333; font-weight:500;"> <%= @product.description %> </span>
+  </div>
+  <div style="margin-bottom:18px;">
+    <strong style="color:#4B2E83;">Categoria:</strong>
+    <span style="color:#333; font-weight:500;"> <%= @product.category&.name %> </span>
+  </div>
+  <div style="margin-bottom:18px;">
+    <strong style="color:#4B2E83;">Status:</strong>
+    <% if @product.active %>
+      <span style="color:#2ecc40; font-weight:600;">Ativo</span>
+    <% else %>
+      <span style="color:#e74c3c; font-weight:600;">Inativo</span>
+    <% end %>
+  </div>
+  <div style="text-align:center; margin-top:32px; display:flex; gap:16px; justify-content:center;">
+    <%= link_to 'Voltar', products_path, class: 'btn btn-secondary', style: 'background:#888; color:#fff; min-width:120px; padding:10px 32px; border:none; border-radius:6px; font-weight:600; text-decoration:none; display:inline-block; text-align:center;' %>
+    <%= link_to "https://wa.me/5511999999999?text=Olá! Gostaria de saber mais sobre o produto #{@product.name}.", target: "_blank", class: "btn btn-whatsapp btn-lg", style: "background:#25d366; color:#fff; min-width:120px; padding:10px 32px; border:none; border-radius:6px; font-weight:600; text-decoration:none; display:inline-block; text-align:center;" do %>
+      <i class="fab fa-whatsapp me-2"></i>Falar no WhatsApp
+    <% end %>
+  </div>
+</div>

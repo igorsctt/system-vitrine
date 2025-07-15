@@ -1,0 +1,25 @@
+<div style="max-width: 400px; margin: 60px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,0.08); padding: 40px;">
+  <h2 style="text-align:center; color:#4B2E83; margin-bottom:32px;">Acesso ao Painel</h2>
+  <%= form_with(model: resource, as: resource_name, url: session_path(resource_name), local: true) do |form| %>
+    <div style="margin-bottom:22px;">
+      <%= form.label :email, 'E-mail', style: 'font-weight:600; color:#333;' %><br>
+      <%= form.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', style: 'width:100%; padding:10px; border-radius:6px; border:1px solid #ccc;' %>
+    </div>
+    <div style="margin-bottom:22px;">
+      <%= form.label :password, 'Senha', style: 'font-weight:600; color:#333;' %><br>
+      <%= form.password_field :password, autocomplete: "current-password", class: 'form-control', style: 'width:100%; padding:10px; border-radius:6px; border:1px solid #ccc;' %>
+    </div>
+    <% if devise_mapping.rememberable? %>
+      <div style="margin-bottom:22px;">
+        <%= form.check_box :remember_me %>
+        <%= form.label :remember_me, 'Lembrar-me', style: 'color:#333; font-weight:500;' %>
+      </div>
+    <% end %>
+    <div style="text-align:center;">
+      <%= form.submit 'Entrar', class: 'btn btn-primary', style: 'background:#4B2E83; color:#fff; padding:10px 32px; border:none; border-radius:6px; font-weight:600; cursor:pointer;' %>
+    </div>
+  <% end %>
+  <div style="margin-top:24px; text-align:center;">
+    <%= link_to 'Esqueceu a senha?', new_password_path(resource_name), style: 'color:#4B2E83; text-decoration:underline; font-weight:500;' %>
+  </div>
+</div>

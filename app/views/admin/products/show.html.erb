@@ -1,0 +1,28 @@
+
+<div class="admin-dashboard-container" style="max-width: 600px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,0.08); padding: 32px;">
+  <h2 style="text-align:center; color:#4B2E83; margin-bottom:24px;">Detalhes do Produto</h2>
+  <div style="margin-bottom:18px;">
+    <strong style="color:#4B2E83;">Nome:</strong>
+    <span style="color:#333; font-weight:500;"> <%= @product.name %> </span>
+  </div>
+  <div style="margin-bottom:18px;">
+    <strong style="color:#4B2E83;">Descrição:</strong>
+    <span style="color:#333; font-weight:500;"> <%= @product.description %> </span>
+  </div>
+  <div style="margin-bottom:18px;">
+    <strong style="color:#4B2E83;">Categoria:</strong>
+    <span style="color:#333; font-weight:500;"> <%= @product.category&.name %> </span>
+  </div>
+  <div style="margin-bottom:18px;">
+    <strong style="color:#4B2E83;">Status:</strong>
+    <% if @product.active %>
+      <span style="color:#2ecc40; font-weight:600;">Ativo</span>
+    <% else %>
+      <span style="color:#e74c3c; font-weight:600;">Inativo</span>
+    <% end %>
+  </div>
+  <div style="text-align:center; margin-top:32px;">
+    <%= link_to 'Editar', edit_admin_product_path(@product), class: 'btn btn-primary', style: 'background:#4B2E83; color:#fff; min-width:120px; padding:10px 32px; border:none; border-radius:6px; font-weight:600; margin-right:8px; text-decoration:none; display:inline-block; text-align:center;' %>
+    <%= link_to 'Voltar', admin_products_path, class: 'btn btn-secondary', style: 'background:#888; color:#fff; min-width:120px; padding:10px 32px; border:none; border-radius:6px; font-weight:600; text-decoration:none; display:inline-block; text-align:center;' %>
+  </div>
+</div>

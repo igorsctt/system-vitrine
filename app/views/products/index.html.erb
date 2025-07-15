@@ -1,0 +1,18 @@
+
+<div style="max-width: 1100px; margin: 40px auto; padding: 24px;">
+  <h2 style="text-align:center; color:#4B2E83; margin-bottom:32px;">Produtos</h2>
+  <div style="display:flex; flex-wrap:wrap; gap:32px; justify-content:center;">
+    <% @products.each do |product| %>
+      <% next unless product.active %>
+      <div style="background:#fff; border-radius:12px; box-shadow:0 2px 16px rgba(0,0,0,0.08); padding:24px; width:320px; display:flex; flex-direction:column; align-items:center;">
+        <h3 style="color:#4B2E83; margin-bottom:12px; text-align:center;"> <%= product.name %> </h3>
+        <p style="color:#888; font-size:15px; margin-bottom:8px; text-align:center;">Categoria: <strong style="color:#333;"> <%= product.category&.name %> </strong></p>
+        <p style="color:#333; font-size:16px; margin-bottom:16px; text-align:center;"> <%= truncate(product.description, length: 80) %> </p>
+        <%= link_to 'Ver detalhes', product_path(product), class: 'btn btn-primary', style: 'background:#4B2E83; color:#fff; padding:8px 24px; border:none; border-radius:6px; font-weight:600; text-decoration:none; margin-top:auto;' %>
+      </div>
+    <% end %>
+  </div>
+  <% if @products.empty? || @products.none?(&:active) %>
+    <p style="text-align:center; color:#888; margin-top:32px;">Nenhum produto disponível.</p>
+  <% end %>
+</div>

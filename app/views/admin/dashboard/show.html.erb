@@ -1,0 +1,122 @@
+<% content_for(:title, "Dashboard - Admin") %>
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Dashboard</h1>
+</div>
+
+<!-- Statistics Cards -->
+<div class="row mb-4">
+  <div class="col-md-3 mb-3">
+    <div class="card stats-card text-center p-3">
+      <div class="card-body">
+        <i class="fas fa-box fa-2x mb-2"></i>
+        <h4 class="display-4"><%= @total_products %></h4>
+        <p class="mb-0">Total de Produtos</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-3 mb-3">
+    <div class="card stats-card text-center p-3" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+      <div class="card-body">
+        <i class="fas fa-check-circle fa-2x mb-2"></i>
+        <h4 class="display-4"><%= @active_products %></h4>
+        <p class="mb-0">Produtos Ativos</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-3 mb-3">
+    <div class="card stats-card text-center p-3" style="background: linear-gradient(135deg, #fc4a1a 0%, #f7b733 100%);">
+      <div class="card-body">
+        <i class="fas fa-pause-circle fa-2x mb-2"></i>
+        <h4 class="display-4"><%= @inactive_products %></h4>
+        <p class="mb-0">Produtos Inativos</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-3 mb-3">
+    <div class="card stats-card text-center p-3" style="background: linear-gradient(135deg, #4776e6 0%, #8e54e9 100%);">
+      <div class="card-body">
+        <i class="fas fa-tags fa-2x mb-2"></i>
+        <h4 class="display-4"><%= @total_categories %></h4>
+        <p class="mb-0">Categorias</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Quick Actions -->
+<div class="row mb-4">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title mb-0">Ações Rápidas</h5>
+      </div>
+      <div class="card-body">
+        <div class="d-grid gap-2">
+          <%= link_to new_admin_product_path, class: "btn btn-primary" do %>
+            <i class="fas fa-plus me-2"></i>Novo Produto
+          <% end %>
+          <%= link_to new_admin_category_path, class: "btn btn-secondary" do %>
+            <i class="fas fa-plus me-2"></i>Nova Categoria
+          <% end %>
+          <%= link_to admin_products_path(status: 'inactive'), class: "btn btn-warning" do %>
+            <i class="fas fa-eye me-2"></i>Ver Produtos Inativos
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title mb-0">Categorias Mais Populares</h5>
+      </div>
+      <div class="card-body">
+        <% if @top_categories.any? %>
+          <% @top_categories.each do |category_name, count| %>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span><%= category_name %></span>
+              <span class="badge bg-primary rounded-pill"><%= count %> produtos</span>
+            </div>
+          <% end %>
+        <% else %>
+          <p class="text-muted mb-0">Nenhuma categoria com produtos ainda.</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Recent Activity -->
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title mb-0">Links Úteis</h5>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-4">
+            <%= link_to admin_products_path, class: "btn btn-outline-primary w-100 mb-2" do %>
+              <i class="fas fa-box me-2"></i>Gerenciar Produtos
+            <% end %>
+          </div>
+          <div class="col-md-4">
+            <%= link_to admin_categories_path, class: "btn btn-outline-secondary w-100 mb-2" do %>
+              <i class="fas fa-tags me-2"></i>Gerenciar Categorias
+            <% end %>
+          </div>
+          <div class="col-md-4">
+            <%= link_to root_path, target: "_blank", class: "btn btn-outline-success w-100 mb-2" do %>
+              <i class="fas fa-external-link-alt me-2"></i>Ver Site Público
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
