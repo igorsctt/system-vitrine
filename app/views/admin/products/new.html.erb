@@ -1,7 +1,6 @@
-
 <div class="admin-dashboard-container" style="max-width: 600px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,0.08); padding: 32px;">
   <h2 style="text-align:center; color:#4B2E83; margin-bottom:24px;">Adicionar Produto</h2>
-  <%= form_with(model: [:admin, @product], local: true) do |form| %>
+  <%= form_with(model: [:admin, @product], local: true, html: { multipart: true }) do |form| %>
     <div style="margin-bottom:18px;">
       <%= form.label :name, 'Nome', style: 'font-weight:600; color:#333;' %><br>
       <%= form.text_field :name, class: 'form-control', style: 'width:100%; padding:10px; border-radius:6px; border:1px solid #ccc;' %>
@@ -18,8 +17,11 @@
       <%= form.label :active, 'Ativo?', style: 'font-weight:600; color:#333;' %><br>
       <%= form.check_box :active %>
     </div>
+    <div class="mb-3">
+      <%= form.label :main_image, "Imagem do Produto" %>
+      <%= form.file_field :main_image, class: "form-control" %>
+    </div>
     <div style="text-align:center;">
       <%= form.submit 'Salvar Produto', class: 'btn btn-primary', style: 'background:#4B2E83; color:#fff; padding:10px 32px; border:none; border-radius:6px; font-weight:600; cursor:pointer;' %>
     </div>
-  <% end %>
-</div>
+  <%
