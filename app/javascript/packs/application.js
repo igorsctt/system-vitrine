@@ -1,3 +1,6 @@
+import $ from 'jquery'
+window.$ = $
+window.jQuery = $
 import 'bootstrap'
 import rails from "@rails/ujs"
 rails.start()
