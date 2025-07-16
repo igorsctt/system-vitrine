@@ -1,3 +1,4 @@
+import 'bootstrap'
 import rails from "@rails/ujs"
 rails.start()
 document.addEventListener('DOMContentLoaded', function() {
