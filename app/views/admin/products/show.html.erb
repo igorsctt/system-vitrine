@@ -28,5 +28,9 @@
     <% end %>
   </div>
   <div style="text-align:center; margin-top:32px;">
-    <%= link_to 'Editar', edit_admin_product_path(@product), class: 'btn btn-primary', style: 'background:#4B2E83; color:#fff; min-width:120px; padding:10px 32px; border:none; border-radius:6px; font-weight:600; margin-right:8px; text-decoration:none; display:inline-block; text-align:center;' %>
-    <%= link_to 'Voltar', admin_products_path, class: 'btn btn-secondary', style: 'background:#888; color:#fff; min-width:120px; padding:10px 32px; border:none; border-radius:6px; font-weight:600; text-decoration:none; display:inline-block; text-align:center;'
+    <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
+      <%= link_to 'Editar', edit_admin_product_path(@product), class: 'btn btn-primary', style: 'background:#4B2E83; color:#fff; min-width:120px; padding:10px 32px; border:none; border-radius:6px; font-weight:600; text-decoration:none; text-align:center; flex:1 1 180px;' %>
+      <%= link_to 'Voltar', admin_products_path, class: 'btn btn-secondary', style: 'background:#888; color:#fff; min-width:120px; padding:10px 32px; border:none; border-radius:6px; font-weight:600; text-decoration:none; text-align:center; flex:1 1 180px;' %>
+    </div>
+  </div>
+</div>
