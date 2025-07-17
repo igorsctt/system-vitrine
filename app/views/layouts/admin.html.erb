@@ -17,23 +17,39 @@
 
   <body>
     <!-- Top Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <%= link_to "Admin - Vitrine Leide", admin_root_path, class: "navbar-brand" %>
-        
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <%= link_to "Ver Site", root_path, class: "nav-link", target: "_blank" %>
-          </li>
-          <li class="nav-item">
-            <span class="navbar-text">Olá, <%= current_user.email %></span>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Sair', destroy_user_session_path, method: :delete, data: { confirm: 'Tem certeza que deseja sair?' } %>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-2">
+  <div class="container-fluid d-flex flex-wrap align-items-center justify-content-between">
+    <%= link_to "Admin - Vitrine Leide", admin_root_path, class: "navbar-brand mb-2 mb-lg-0" %>
+    <ul class="navbar-nav flex-row flex-wrap align-items-center ms-auto gap-2" style="gap:12px;">
+      <li class="nav-item">
+        <%= link_to "Ver Site", root_path, class: "nav-link px-2", target: "_blank" %>
+      </li>
+      <li class="nav-item">
+        <span class="navbar-text px-2" style="color:#ccc;">Olá, <%= current_user.email %></span>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Sair', destroy_user_session_path, method: :delete, data: { confirm: 'Tem certeza que deseja sair?' }, class: "nav-link px-2", style: "color:#e13ca5; font-weight:600;" %>
+      </li>
+    </ul>
+  </div>
+</nav>
+<style>
+
+@media (max-width: 600px) {
+  .navbar-nav.flex-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100%;
+  }
+  .navbar-text, .nav-link {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .navbar-brand {
+    margin-bottom: 8px !important;
+  }
+}
+</style>
 
     <div class="container-fluid">
       <div class="row">
